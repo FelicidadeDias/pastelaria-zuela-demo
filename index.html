@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pastelaria Zuela | Demo</title>
+
+<meta name="description" content="Demo de website profissional para a Pastelaria Zuela. Bolos, doces, salgados, encomendas personalizadas e formações.">
+
+<style>
+:root{
+  --brown:#6b351f;
+  --brown-dark:#3d1d12;
+  --cream:#fff8ef;
+  --cream2:#f8ead9;
+  --gold:#d89b45;
+  --pink:#e9a4a5;
+  --green:#25d366;
+  --text:#2d211c;
+  --white:#fff;
+  --shadow:0 12px 35px rgba(61,29,18,.12);
+  --radius:22px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* DEMO NOTICE */
+.demo-notice{
+  background:#fff0c8;
+  color:#684a00;
+  text-align:center;
+  padding:9px 15px;
+  font-size:13px;
+  font-weight:bold;
+  border-bottom:1px solid #efd58b;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,248,239,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(107,53,31,.08);
+}
+
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:21px;
+  font-weight:900;
+  color:var(--brown-dark);
+}
+
+.logo-icon{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:var(--brown);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+}
+
+nav{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+nav a{
+  font-size:14px;
+  font-weight:bold;
+  color:#553124;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.nav-btn{
+  background:var(--brown);
+  color:white!important;
+  padding:11px 17px;
+  border-radius:30px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  min-height:650px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:50px;
+  padding:75px 0;
+}
+
+.hero-text span{
+  display:inline-block;
+  background:#f5dfc5;
+  color:var(--brown);
+  padding:8px 15px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  color:var(--brown-dark);
+  font-size:clamp(42px,6vw,70px);
+  line-height:1.03;
+  margin-bottom:22px;
+}
+
+.hero h1 em{
+  color:var(--gold);
+  font-style:normal;
+}
+
+.hero p{
+  font-size:18px;
+  color:#70584b;
+  max-width:570px;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 21px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--brown);
+  color:white;
+}
+
+.btn-secondary{
+  border:1px solid #d8b99a;
+  color:var(--brown);
+  background:white;
+}
+
+.hero-card{
+  position:relative;
+  min-height:500px;
+  border-radius:35px;
+  overflow:hidden;
+  background:
+    linear-gradient(145deg,rgba(61,29,18,.08),rgba(216,155,69,.16)),
+    url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+  box-shadow:var(--shadow);
+}
+
+.hero-card-content{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,.91);
+  backdrop-filter:blur(8px);
+}
+
+.hero-card-content strong{
+  display:block;
+  color:var(--brown-dark);
+  font-size:20px;
+}
+
+/* SECTION */
+section{
+  padding:90px 0;
+}
+
+.section-head{
+  text-align:center;
+  max-width:680px;
+  margin:0 auto 45px;
+}
+
+.section-head span{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.section-head h2{
+  font-family:Georgia,serif;
+  color:var(--brown-dark);
+  font-size:clamp(32px,5vw,48px);
+  margin:8px 0 12px;
+}
+
+.section-head p{
+  color:#765f53;
+}
+
+/* CATEGORIES */
+.categories{
+  background:white;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.category{
+  padding:28px 18px;
+  background:var(--cream);
+  border-radius:var(--radius);
+  text-align:center;
+  border:1px solid #f0dfce;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.category-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.category h3{
+  color:var(--brown-dark);
+  margin-bottom:5px;
+}
+
+.category p{
+  color:#806c61;
+  font-size:14px;
+}
+
+/* PRODUCTS */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.product{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(61,29,18,.07);
+  border:1px solid #f0e3d7;
+}
+
+.product-img{
+  height:230px;
+  overflow:hidden;
+}
+
+.product-img img{
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.product:hover .product-img img{
+  transform:scale(1.04);
+}
+
+.product-body{
+  padding:20px;
+}
+
+.product-body h3{
+  color:var(--brown-dark);
+  margin-bottom:7px;
+}
+
+.product-body p{
+  color:#78665d;
+  font-size:14px;
+  min-height:45px;
+}
+
+.product-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+}
+
+.price{
+  color:var(--brown);
+  font-weight:900;
+}
+
+.order-btn{
+  background:var(--green);
+  color:white;
+  border:0;
+  padding:10px 14px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* CUSTOM ORDERS */
+.custom{
+  background:var(--brown-dark);
+  color:white;
+}
+
+.custom-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.custom h2{
+  font-family:Georgia,serif;
+  font-size:44px;
+  line-height:1.1;
+  margin:10px 0 20px;
+}
+
+.custom p{
+  color:#ead9cd;
+}
+
+.custom-list{
+  margin-top:25px;
+  display:grid;
+  gap:12px;
+}
+
+.custom-list div{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.custom-list b{
+  color:#f3c47a;
+}
+
+.form-card{
+  background:white;
+  padding:28px;
+  border-radius:25px;
+  color:var(--text);
+}
+
+.form-card h3{
+  margin-bottom:18px;
+  color:var(--brown-dark);
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #e1d1c4;
+  border-radius:12px;
+  margin-bottom:12px;
+  outline:none;
+  font:inherit;
+}
+
+.form-card textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.form-card button{
+  width:100%;
+  padding:14px;
+  background:var(--green);
+  color:white;
+  border:0;
+  border-radius:12px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* TRAINING */
+.training{
+  background:#fff;
+}
+
+.training-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.course{
+  background:var(--cream);
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid #eedccb;
+}
+
+.course-icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.course h3{
+  color:var(--brown-dark);
+  margin-bottom:8px;
+}
+
+.course p{
+  color:#766158;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.course a{
+  color:var(--brown);
+  font-weight:bold;
+}
+
+/* QR */
+.qr-section{
+  background:var(--cream2);
+}
+
+.qr-wrap{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:center;
+  background:white;
+  border-radius:30px;
+  padding:45px;
+  box-shadow:var(--shadow);
+}
+
+.qr-wrap h2{
+  font-family:Georgia,serif;
+  color:var(--brown-dark);
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.qr-wrap p{
+  color:#766158;
+  max-width:650px;
+}
+
+.qr-box{
+  width:190px;
+  height:190px;
+  background:white;
+  border:8px solid white;
+  box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.qr-box img{
+  width:100%;
+  height:100%;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+  background:white;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.quote{
+  background:var(--cream);
+  padding:25px;
+  border-radius:20px;
+  border:1px solid #efdfcf;
+}
+
+.stars{
+  color:#d99831;
+  margin-bottom:10px;
+}
+
+.quote p{
+  color:#65534a;
+  font-size:15px;
+}
+
+.quote strong{
+  display:block;
+  margin-top:16px;
+  color:var(--brown-dark);
+}
+
+/* CONTACT */
+.contact{
+  background:#f8ead9;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact-card{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+}
+
+.contact-card h3{
+  color:var(--brown-dark);
+  margin-bottom:18px;
+}
+
+.contact-item{
+  display:flex;
+  gap:14px;
+  margin:17px 0;
+}
+
+.contact-item span{
+  font-size:23px;
+}
+
+.contact-item strong{
+  display:block;
+}
+
+.contact-item small{
+  color:#806d62;
+}
+
+/* FOOTER */
+footer{
+  background:#29130d;
+  color:#e8d8ce;
+  padding:45px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:40px;
+}
+
+footer h3{
+  color:white;
+  margin-bottom:12px;
+}
+
+footer p,
+footer a{
+  color:#cdbbb0;
+  font-size:14px;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:35px;
+  padding-top:20px;
+  text-align:center;
+  color:#a99286;
+  font-size:12px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:999;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--green);
+  color:white;
+  font-size:27px;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,120px);
+  background:#29130d;
+  color:white;
+  padding:14px 22px;
+  border-radius:30px;
+  z-index:2000;
+  transition:.3s;
+  box-shadow:var(--shadow);
+  font-size:14px;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero,
+  .custom-wrap,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero-card{
+    min-height:400px;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-grid,
+  .training-grid,
+  .testimonial-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .qr-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .qr-box{
+    margin:auto;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:650px){
+  nav{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:var(--cream);
+    padding:20px;
+    flex-direction:column;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .category-grid,
+  .product-grid,
+  .training-grid,
+  .testimonial-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .hero-card{
+    min-height:350px;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .custom h2{
+    font-size:36px;
+  }
+
+  .qr-wrap{
+    padding:30px 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="demo-notice">
+  DEMONSTRAÇÃO — Este website é um modelo fictício. Contactos, preços, morada e avaliações apresentados abaixo são apenas para demonstração.
+</div>
+
+<header>
+  <div class="container nav">
+
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">🧁</span>
+      Pastelaria Zuela
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+      <a href="#inicio">Início</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#encomendas">Encomendas</a>
+      <a href="#formacoes">Formações</a>
+      <a href="#contactos">Contactos</a>
+      <a href="#catalogo" class="nav-btn">Ver catálogo</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="container hero" id="inicio">
+
+  <div class="hero-text">
+
+    <span>🍰 SABOR • QUALIDADE • CRIATIVIDADE</span>
+
+    <h1>
+      Momentos especiais
+      começam com
+      <em>um doce.</em>
+    </h1>
+
+    <p>
+      Bolos, doces, salgados e criações personalizadas
+      preparados com carinho para tornar cada momento
+      ainda mais especial.
+    </p>
+
+    <div class="buttons">
+      <a href="#catalogo" class="btn btn-primary">
+        🍰 Ver catálogo
+      </a>
+
+      <a href="https://wa.me/244923000000?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." 
+         class="btn btn-secondary"
+         target="_blank">
+        📲 Fazer pedido
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-card">
+
+    <div class="hero-card-content">
+      <strong>Feito especialmente para si</strong>
+      <span>Encomendas personalizadas para aniversários, eventos e momentos especiais.</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIAS -->
+<section class="categories">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span>O que fazemos</span>
+      <h2>Delícias para todos os momentos</h2>
+      <p>
+        Descubra algumas das opções disponíveis na nossa demonstração.
+      </p>
+    </div>
+
+    <div class="category-grid">
+
+      <div class="category">
+        <div class="category-icon">🎂</div>
+        <h3>Bolos</h3>
+        <p>Bolos personalizados para diferentes ocasiões.</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🧁</div>
+        <h3>Doces</h3>
+        <p>Cupcakes, sobremesas e pequenas delícias.</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🥟</div>
+        <h3>Salgados</h3>
+        <p>Opções perfeitas para festas e eventos.</p>
+      </div>
+
+      <div class="category">
+        <div class="category-icon">🎁</div>
+        <h3>Kits</h3>
+        <p>Combinações especiais para oferecer.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATÁLOGO -->
+<section id="catalogo">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span>Catálogo digital</span>
+      <h2>Alguns dos nossos favoritos</h2>
+      <p>
+        Estes produtos e preços são fictícios e servem apenas para demonstrar
+        como poderia funcionar o catálogo digital.
+      </p>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+               alt="Bolo de chocolate">
+        </div>
+
+        <div class="product-body">
+          <h3>Bolo de Chocolate</h3>
+          <p>
+            Bolo macio de chocolate com cobertura especial.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">15.000 Kz</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Bolo de Chocolate')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80"
+               alt="Cupcakes">
+        </div>
+
+        <div class="product-body">
+          <h3>Cupcakes Especiais</h3>
+          <p>
+            Cupcakes decorados para aniversários e eventos.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">8.000 Kz</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Cupcakes Especiais')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80"
+               alt="Croissants">
+        </div>
+
+        <div class="product-body">
+          <h3>Mini Salgados</h3>
+          <p>
+            Seleção de salgados para festas e reuniões.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">10.000 Kz</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Mini Salgados')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+               alt="Donuts">
+        </div>
+
+        <div class="product-body">
+          <h3>Donuts Decorados</h3>
+          <p>
+            Donuts preparados para tornar a sua mesa mais bonita.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">7.500 Kz</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Donuts Decorados')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80"
+               alt="Bolo personalizado">
+        </div>
+
+        <div class="product-body">
+          <h3>Bolo Personalizado</h3>
+          <p>
+            Criado de acordo com o tema e preferência do cliente.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">Sob consulta</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Bolo Personalizado')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80"
+               alt="Doces">
+        </div>
+
+        <div class="product-body">
+          <h3>Caixa de Doces</h3>
+          <p>
+            Uma seleção especial para oferecer ou partilhar.
+          </p>
+
+          <div class="product-bottom">
+            <span class="price">12.000 Kz</span>
+
+            <button class="order-btn"
+                    onclick="orderProduct('Caixa de Doces')">
+              Pedir
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ENCOMENDAS -->
+<section class="custom" id="encomendas">
+
+  <div class="container custom-wrap">
+
+    <div>
+
+      <span style="color:#f3c47a;font-weight:bold;">
+        ENCOMENDAS PERSONALIZADAS
+      </span>
+
+      <h2>
+        Imagine.<br>
+        Nós ajudamos a transformar em doce.
+      </h2>
+
+      <p>
+        O cliente pode enviar os detalhes daquilo que pretende
+        e entrar diretamente em contacto pelo WhatsApp.
+      </p>
+
+      <div class="custom-list">
+
+        <div>
+          <b>✓</b>
+          Tema e decoração
+        </div>
+
+        <div>
+          <b>✓</b>
+          Sabor e tamanho
+        </div>
+
+        <div>
+          <b>✓</b>
+          Quantidade
+        </div>
+
+        <div>
+          <b>✓</b>
+          Data da encomenda
+        </div>
+
+        <div>
+          <b>✓</b>
+          Observações especiais
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="form-card">
+
+      <h3>Faça uma solicitação</h3>
+
+      <input id="name" type="text" placeholder="Seu nome">
+
+      <select id="type">
+        <option value="">Tipo de encomenda</option>
+        <option>Bolo personalizado</option>
+        <option>Doces</option>
+        <option>Salgados</option>
+        <option>Kit para festa</option>
+        <option>Outro</option>
+      </select>
+
+      <input id="date" type="date">
+
+      <textarea id="details"
+        placeholder="Conte-nos como gostaria da sua encomenda..."></textarea>
+
+      <button onclick="sendCustomOrder()">
+        📲 Enviar pelo WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FORMAÇÕES -->
+<section class="training" id="formacoes">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span>Formações</span>
+      <h2>Aprenda e desenvolva novas habilidades</h2>
+      <p>
+        Área demonstrativa para divulgação dos cursos e inscrições.
+      </p>
+    </div>
+
+
+    <div class="training-grid">
+
+      <div class="course">
+
+        <div class="course-icon">🎂</div>
+
+        <h3>Bolos Decorados</h3>
+
+        <p>
+          Aprenda técnicas de preparação, montagem e decoração
+          de bolos para diferentes ocasiões.
+        </p>
+
+        <a href="#" onclick="courseMessage('Bolos Decorados');return false;">
+          Tenho interesse →
+        </a>
+
+      </div>
+
+
+      <div class="course">
+
+        <div class="course-icon">🧁</div>
+
+        <h3>Curso de Pastelaria</h3>
+
+        <p>
+          Formação introdutória para quem deseja desenvolver
+          conhecimentos na área da pastelaria.
+        </p>
+
+        <a href="#" onclick="courseMessage('Curso de Pastelaria');return false;">
+          Tenho interesse →
+        </a>
+
+      </div>
+
+
+      <div class="course">
+
+        <div class="course-icon">🥟</div>
+
+        <h3>Curso de Salgados</h3>
+
+        <p>
+          Técnicas de preparação e apresentação de diferentes
+          tipos de salgados.
+        </p>
+
+        <a href="#" onclick="courseMessage('Curso de Salgados');return false;">
+          Tenho interesse →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QR CODE -->
+<section class="qr-section">
+
+  <div class="container">
+
+    <div class="qr-wrap">
+
+      <div>
+
+        <span style="color:#b7792b;font-weight:bold;">
+          CATÁLOGO NO TELEMÓVEL
+        </span>
+
+        <h2>
+          Aponte. Consulte. Escolha.
+        </h2>
+
+        <p>
+          Este QR Code é demonstrativo. Num projeto real,
+          poderia ser colocado nas mesas, balcão, embalagens,
+          cartões de visita, flyers ou outros materiais da pastelaria.
+        </p>
+
+        <br>
+
+        <a href="#catalogo" class="btn btn-primary">
+          Ver catálogo agora
+        </a>
+
+      </div>
+
+      <div class="qr-box">
+
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://exemplo.com/pastelaria-zuela-demo"
+          alt="QR Code demonstrativo">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- AVALIAÇÕES -->
+<section class="testimonials">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span>Experiência</span>
+      <h2>O que os nossos clientes dizem</h2>
+      <p>
+        Avaliações abaixo são fictícias e servem apenas para demonstrar
+        como esta área poderia aparecer no website.
+      </p>
+    </div>
+
+
+    <div class="testimonial-grid">
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “O bolo ficou lindo e exatamente como tínhamos imaginado.
+          Todos adoraram!”
+        </p>
+        <strong>— Ana M.</strong>
+      </div>
+
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Gostei muito da facilidade para escolher os produtos
+          e fazer o pedido.”
+        </p>
+        <strong>— Carla P.</strong>
+      </div>
+
+
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Os salgados chegaram bem preparados e fizeram sucesso
+          na nossa festa.”
+        </p>
+        <strong>— João S.</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACTOS -->
+<section class="contact" id="contactos">
+
+  <div class="container">
+
+    <div class="section-head">
+      <span>Fale connosco</span>
+      <h2>Estamos à sua disposição</h2>
+      <p>
+        Dados fictícios utilizados exclusivamente nesta demonstração.
+      </p>
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <h3>Informações</h3>
+
+        <div class="contact-item">
+          <span>📱</span>
+          <div>
+            <strong>WhatsApp</strong>
+            <small>+244 923 000 000</small>
+          </div>
+        </div>
+
+
+        <div class="contact-item">
+          <span>📞</span>
+          <div>
+            <strong>Telefone</strong>
+            <small>+244 222 000 000</small>
+          </div>
+        </div>
+
+
+        <div class="contact-item">
+          <span>📍</span>
+          <div>
+            <strong>Localização</strong>
+            <small>Luanda, Angola — endereço demonstrativo</small>
+          </div>
+        </div>
+
+
+        <div class="contact-item">
+          <span>🕐</span>
+          <div>
+            <strong>Horário</strong>
+            <small>Segunda a Sábado · 08h00–18h00</small>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>Faça o seu pedido</h3>
+
+        <p style="color:#756158;margin-bottom:22px;">
+          Para encomendas, informações sobre produtos ou formações,
+          fale diretamente connosco pelo WhatsApp.
+        </p>
+
+        <a
+          href="https://wa.me/244923000000?text=Olá!%20Encontrei%20o%20site%20da%20Pastelaria%20Zuela%20e%20gostaria%20de%20saber%20mais."
+          target="_blank"
+          class="btn btn-primary"
+          style="width:100%;">
+          📲 Falar pelo WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>🧁 Pastelaria Zuela</h3>
+
+        <p>
+          Uma demonstração de como uma presença digital profissional
+          pode apresentar produtos, receber pedidos e divulgar formações.
+        </p>
+      </div>
+
+
+      <div>
+        <h3>Navegação</h3>
+
+        <p><a href="#inicio">Início</a></p>
+        <p><a href="#catalogo">Catálogo</a></p>
+        <p><a href="#encomendas">Encomendas</a></p>
+        <p><a href="#formacoes">Formações</a></p>
+      </div>
+
+
+      <div>
+        <h3>Contacto</h3>
+
+        <p>WhatsApp: +244 923 000 000</p>
+        <p>Luanda, Angola</p>
+        <p>Segunda–Sábado: 08h–18h</p>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © 2026 Pastelaria Zuela — Demonstração criada pela Fely e Amigos – Soluções Digitais.
+      Dados apresentados são fictícios.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- WHATSAPP FLUTUANTE -->
+<a
+  class="whatsapp"
+  href="https://wa.me/244923000000?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido."
+  target="_blank"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+function toggleMenu(){
+
+  document.getElementById("nav").classList.toggle("active");
+
+}
+
+
+document.querySelectorAll("nav a").forEach(function(link){
+
+  link.addEventListener("click",function(){
+
+    document.getElementById("nav").classList.remove("active");
+
+  });
+
+});
+
+
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.classList.add("show");
+
+  setTimeout(function(){
+
+    toast.classList.remove("show");
+
+  },3000);
+
+}
+
+
+function orderProduct(product){
+
+  const message =
+    "Olá! 👋 Vi o catálogo da Pastelaria Zuela e gostaria de fazer um pedido.%0A%0A" +
+    "Produto: " + product + "%0A%0A" +
+    "Gostaria de saber mais informações.";
+
+  window.open(
+    "https://wa.me/244923000000?text=" + message,
+    "_blank"
+  );
+
+}
+
+
+function sendCustomOrder(){
+
+  const name = document.getElementById("name").value.trim();
+  const type = document.getElementById("type").value;
+  const date = document.getElementById("date").value;
+  const details = document.getElementById("details").value.trim();
+
+  if(!name || !type){
+
+    showToast("Preencha o seu nome e o tipo de encomenda.");
+
+    return;
+
+  }
+
+  let message =
+    "Olá! 👋 Gostaria de fazer uma encomenda personalizada.%0A%0A" +
+    "Nome: " + encodeURIComponent(name) + "%0A" +
+    "Tipo: " + encodeURIComponent(type) + "%0A" +
+    "Data: " + encodeURIComponent(date || "A combinar") + "%0A" +
+    "Detalhes: " + encodeURIComponent(details || "Ainda não informado");
+
+  window.open(
+    "https://wa.me/244923000000?text=" + message,
+    "_blank"
+  );
+
+}
+
+
+function courseMessage(course){
+
+  const message =
+    "Olá! 👋 Vi a área de formações da Pastelaria Zuela e tenho interesse no curso: " +
+    course +
+    ". Gostaria de receber mais informações.";
+
+  window.open(
+    "https://wa.me/244923000000?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
